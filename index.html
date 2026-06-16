@@ -2,99 +2,120 @@
 <html>
 <head>
 <title>Mohd Rashid Farooqui</title>
+
 <style>
 body {
     font-family: Arial;
-    margin: 40px;
-    max-width: 800px;
-    line-height: 1.6;
-}
-h1, h2 {
-    color: #2c3e50;
-}
-a {
-    color: #2980b9;
-    text-decoration: none;
-}
-</style>
-    <style>
-body {
-    font-family: Arial;
-    margin: 40px;
-    max-width: 800px;
+    margin: 0;
+    padding: 0;
     line-height: 1.6;
 }
 
-/* ✅ ADD THIS BELOW */
+/* Navbar */
 .navbar {
-    text-align: right;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #ffffff;
+    padding: 15px 30px;
+    border-bottom: 1px solid #ddd;
 }
 
 .navbar a {
-    margin-left: 15px;
+    margin-left: 20px;
     text-decoration: none;
-    color: #2c3e50;
+    color: #333;
     font-weight: bold;
 }
 
 .navbar a:hover {
-    color: #2980b9;
+    color: #0077cc;
+}
+
+/* Main layout */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text {
+    width: 60%;
+}
+
+.image {
+    width: 30%;
+}
+
+.image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Section titles */
+h2 {
+    margin-top: 40px;
+    color: #222;
 }
 </style>
+
 </head>
 
 <body>
 
-<!-- ✅ ADD THIS NAVBAR HERE -->
+<!-- ✅ Navigation bar -->
 <div class="navbar">
   #aboutAbout</a>
   #projectsProjects</a>
   #researchResearch</a>
-  #cvCV</a>
   #contactContact</a>
 </div>
 
-<h1>Mohd Rashid Farooqui</h1>
-<h1>Mohd Rashid Farooqui</h1>
+<div class="container">
 
-<p>Email: rfarooqui90@gmail.com</p>
-          25a1etsm8011@iitdabudhabi.ac.ae</p>
-<h2 id="about">About Me</h2>
+<div class="header">
+
+<div class="text">
+<h1>Mohd Rashid Farooqui</h1>
 
 <p>
-I am Mohd Rashid Farooqui, an aspiring PhD candidate with strong interest in research and academic development.
-My background includes [your degree/field], and I am particularly interested in [your research area].
-I am currently preparing for PhD applications and working on developing my research and technical skills.
+I am an aspiring PhD candidate with a strong interest in research and academic development. 
+My background includes [your degree], and I am particularly interested in [your research area].
+</p>
+</div>
+
+<div class="image">
+<img src="https://via.placeholder.com/200" alt="Profile Photo">
+</div>
+
+</div>
+
+<h2 id="about">About Me</h2>
+<p>
+I am currently preparing for PhD applications and building my research profile through projects and self-study.
+My goal is to contribute to impactful research in my field.
 </p>
 
 <h2 id="projects">Projects</h2>
+<p><strong>Project 1:</strong> Data analysis using Python with visualization tools.</p>
+<p><strong>Project 2:</strong> Machine learning model for prediction tasks.</p>
+
+<h2 id="research">Research Interests</h2>
 <ul>
-<li>Machine Learning / AI</li>
-<li>Data Analysis</li>
-<li>Optimization / Engineering Systems</li>
+<li>Machine Learning</li>
+<li>Data Science</li>
+<li>Artificial Intelligence</li>
 </ul>
 
-<h2 id="research">Research Goal</h2>
-
-<p><strong>Project 1: Data Analysis using Python</strong><br>
-Performed data analysis using Python with Pandas and Matplotlib to extract meaningful insights.</p>
-
-<p><strong>Project 2: Machine Learning Model</strong><br>
-Developed a basic machine learning model for prediction tasks using structured datasets.</p>
-
-<h2 id="cv">CV</h2>
-<p>
-My goal is to pursue a PhD and contribute to impactful research in my chosen field.
-I am particularly interested in solving real-world problems using data-driven approaches.
-</p>
-
 <h2 id="contact">Contact</h2>
-<p>
-Email: your-email@example.com<br>
-GitHub: https://github.com/Mohd-Rashid-Farooqui
-</p>
+<p>Email: your-email@example.com</p>
+
+</div>
 
 </body>
 </html>
-``
