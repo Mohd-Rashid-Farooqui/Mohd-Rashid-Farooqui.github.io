@@ -1,121 +1,437 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Mohd Rashid Farooqui</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mohd Rashid Farooqui — Energy Transition Research</title>
+<meta name="description" content="Mechanical engineer (13 yrs, oil & gas infrastructure) researching integrity-constrained repurposing of legacy assets for CO2 and hydrogen, with a GCC focus." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
 
 <style>
-body {
-    font-family: Arial;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+:root{
+  --paper:#FFFFFF;            /* clean white */
+  --mist:#F5F7FA;            /* very light cool gray for section banding */
+  --navy:#1B2A4A;            /* primary navy — used sparingly */
+  --navy-soft:#2E4372;       /* slightly lighter navy for small accents */
+  --ink:#27313F;            /* main body text (dark slate, not pure black) */
+  --ink-2:#4A5567;          /* secondary text */
+  --muted:#7A8595;          /* captions */
+  --line:#E5E9F0;           /* hairlines */
+  --maxw:920px;
 }
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+a{color:var(--navy-soft);text-decoration:none;}
+a:focus-visible,button:focus-visible{outline:2px solid var(--navy);outline-offset:3px;border-radius:2px;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
 
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: flex-end;
-    background-color: #ffffff;
-    padding: 15px 30px;
-    border-bottom: 1px solid #ddd;
-}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line);}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;}
+.brand{font-family:"Source Serif 4",serif;font-weight:600;font-size:18px;letter-spacing:.2px;color:var(--navy);}
+.navlinks{display:flex;gap:24px;align-items:center;}
+.navlinks a{font-size:14px;color:var(--ink-2);font-weight:500;}
+.navlinks a:hover{color:var(--navy);}
+.nav-cv{border:1px solid var(--navy);border-radius:999px;padding:7px 16px;font-size:13px;font-weight:600;color:var(--navy);transition:.2s;}
+.nav-cv:hover{background:var(--navy);color:#fff;}
+.menu-toggle{display:none;background:none;border:0;font-family:"IBM Plex Mono",monospace;font-size:13px;cursor:pointer;color:var(--navy);}
 
-.navbar a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
+.hero{padding:74px 0 56px;}
+.hero-grid{display:grid;grid-template-columns:1fr 220px;gap:46px;align-items:start;}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--navy-soft);margin-bottom:18px;}
+h1{font-family:"Source Serif 4",serif;font-weight:600;font-size:clamp(34px,6vw,52px);line-height:1.05;margin:0 0 20px;letter-spacing:-.01em;color:var(--navy);}
+.lede{font-size:19px;color:var(--ink-2);max-width:46ch;margin:0 0 26px;}
+.lede strong{color:var(--ink);font-weight:600;}
+.affil{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:28px;}
+.affil span{display:inline-flex;align-items:center;gap:7px;}
+.affil span::before{content:"";width:5px;height:5px;background:var(--navy-soft);border-radius:50%;display:inline-block;}
+.links{display:flex;flex-wrap:wrap;gap:10px;}
+.links a{border:1px solid var(--line);background:var(--paper);border-radius:8px;padding:9px 15px;font-size:14px;font-weight:500;color:var(--ink-2);transition:.18s;}
+.links a:hover{border-color:var(--navy);color:var(--navy);transform:translateY(-1px);}
+.portrait{width:220px;height:264px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#EEF1F6;position:relative;}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block;}
+.portrait .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);text-align:center;padding:18px;}
 
-.navbar a:hover {
-    color: #0077cc;
-}
+.thesis{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:34px 0;margin-top:8px;}
+.thesis p{font-family:"Source Serif 4",serif;font-size:clamp(19px,2.6vw,24px);line-height:1.5;margin:0;color:var(--ink);max-width:62ch;}
+.thesis .k{color:var(--navy);font-style:italic;}
 
-/* Main layout */
-.container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
+section{padding:60px 0;}
+.sec-label{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+h2{font-family:"Source Serif 4",serif;font-weight:600;font-size:clamp(25px,4vw,32px);margin:0 0 8px;letter-spacing:-.01em;color:var(--navy);}
+.sec-intro{color:var(--ink-2);max-width:60ch;margin:0 0 36px;}
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+.strata{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper);}
+.layer{display:grid;grid-template-columns:118px 1fr;align-items:stretch;border-bottom:1px solid var(--line);}
+.layer:last-child{border-bottom:0;}
+.layer .rail{position:relative;display:flex;flex-direction:column;justify-content:center;padding:22px 16px;color:#EAEEF5;}
+.layer .depthtag{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;opacity:.95;}
+.layer .rail::after{content:"";position:absolute;right:0;top:14px;bottom:14px;width:1px;background:rgba(255,255,255,.25);}
+.layer.l1 .rail{background:#5C6E92;}
+.layer.l2 .rail{background:#445981;}
+.layer.l3 .rail{background:#2E4372;}
+.layer.l4 .rail{background:#1B2A4A;}
+.layer .body{padding:22px 26px;}
+.layer .body h3{font-family:"Source Serif 4",serif;font-weight:600;font-size:20px;margin:0 0 6px;color:var(--ink);}
+.layer .body p{margin:0 0 12px;color:var(--ink-2);font-size:15.5px;}
+.tags{display:flex;flex-wrap:wrap;gap:7px;}
+.tags span{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-2);border:1px solid var(--line);background:var(--mist);border-radius:6px;padding:4px 9px;}
 
-.text {
-    width: 60%;
-}
+.banded{background:var(--mist);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 
-.image {
-    width: 30%;
-}
+.entry{display:grid;grid-template-columns:160px 1fr;gap:24px;padding:26px 0;border-top:1px solid var(--line);}
+.entry:first-of-type{border-top:0;}
+.entry .when{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);}
+.entry .role{font-family:"Source Serif 4",serif;font-size:19px;font-weight:600;margin:0 0 2px;color:var(--ink);}
+.entry .org{font-size:13.5px;color:var(--navy-soft);font-weight:600;margin:0 0 10px;font-family:"IBM Plex Mono",monospace;letter-spacing:.02em;}
+.entry ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:15.5px;}
+.entry ul li{margin-bottom:6px;}
+.entry ul li b{color:var(--ink);font-weight:600;}
+.projnote{font-size:13.5px;color:var(--muted);margin:2px 0 12px;font-style:italic;}
 
-.image img {
-    width: 100%;
-    border-radius: 10px;
-}
+.pub{padding:18px 0;border-top:1px solid var(--line);}
+.pub:first-of-type{border-top:0;}
+.pub .t{font-weight:600;font-size:16.5px;margin:0 0 3px;color:var(--ink);}
+.pub .m{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);}
+.pub .m a{color:var(--navy-soft);}
+.pub .status{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--navy-soft);border:1px solid var(--navy-soft);border-radius:5px;padding:1px 7px;margin-left:8px;vertical-align:middle;}
 
-/* Section titles */
-h2 {
-    margin-top: 40px;
-    color: #222;
+.cred{display:grid;grid-template-columns:1fr 1fr;gap:36px 48px;}
+.cred h3{font-family:"Source Serif 4",serif;font-size:18px;font-weight:600;margin:0 0 12px;color:var(--ink);}
+.cred ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:15px;}
+.cred ul li{margin-bottom:6px;}
+.cred .full{grid-column:1 / -1;}
+
+.contact{background:var(--navy);color:#E7ECF4;border-radius:16px;padding:44px;margin:20px 0 60px;}
+.contact h2{color:#fff;}
+.contact p{color:#BCC7DA;max-width:54ch;}
+.contact .links a{background:transparent;border-color:#3C4F77;color:#E7ECF4;}
+.contact .links a:hover{border-color:#E7ECF4;color:#fff;}
+
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:13px;font-family:"IBM Plex Mono",monospace;}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+@media (max-width:720px){
+  .hero-grid{grid-template-columns:1fr;gap:30px;}
+  .portrait{width:160px;height:192px;}
+  .entry{grid-template-columns:1fr;gap:6px;}
+  .layer{grid-template-columns:92px 1fr;}
+  .layer .body{padding:18px;}
+  .cred{grid-template-columns:1fr;gap:28px;}
+  .navlinks{display:none;}
+  .navlinks.open{display:flex;position:absolute;top:60px;left:0;right:0;flex-direction:column;gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:8px 24px 16px;}
+  .navlinks.open a{padding:11px 0;border-bottom:1px solid var(--line);}
+  .navlinks.open .nav-cv{border:1px solid var(--navy);text-align:center;margin-top:10px;}
+  .menu-toggle{display:block;}
+  .contact{padding:30px 22px;}
 }
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
 </style>
-
 </head>
-
 <body>
 
-<!-- ✅ Navigation bar -->
-<div class="navbar">
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#research">Research</a>
-  <a href="#contact">Contact</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">Mohd Rashid Farooqui</a>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">MENU</button>
+    <nav class="navlinks">
+      <a href="#research">Research</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Publications</a>
+      <a href="#credentials">More</a>
+      <a href="#contact">Contact</a>
+      <!-- TODO: upload your CV as cv.pdf in this repo, then this link works as-is -->
+      <a class="nav-cv" href="cv.pdf">CV (PDF)</a>
+    </nav>
+  </div>
+</header>
+
+<a id="top"></a>
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="reveal">
+        <div class="eyebrow">PhD Applicant · Energy Transition</div>
+        <h1>Mohd Rashid Farooqui</h1>
+        <p class="lede">
+          Mechanical engineer with <strong>13 years designing oil &amp; gas infrastructure</strong>
+          — cross-country pipelines, terminals, and storage — now researching how those same
+          legacy assets can be re-engineered for <strong>CO₂ and hydrogen</strong>.
+        </p>
+        <div class="affil">
+          <span>M.Tech, Energy Transition &amp; Sustainability — IIT Delhi (Abu Dhabi)</span>
+          <span>Senior Manager — MECON Ltd. (Govt. of India)</span>
+        </div>
+        <div class="links">
+          <a href="mailto:25a1etsm8011@iitdabudhabi.ac.ae">Email</a>
+          <a href="https://orcid.org/0009-0009-5107-7212" target="_blank" rel="noopener">ORCID</a>
+          <a href="https://scholar.google.com/citations?user=Mohd+Rashid+Farooqui" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/rfarooqui90" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/Mohd-Rashid-Farooqui" target="_blank" rel="noopener">GitHub</a>
+          <a href="cv.pdf">CV</a>
+        </div>
+      </div>
+      <div class="portrait reveal">
+        <!-- TODO: add headshot.jpg to this repository; it will appear here automatically -->
+        <img src="headshot.jpg" alt="Mohd Rashid Farooqui" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="ph" style="display:none;">Add headshot.jpg<br>to this repository</div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="container">
-
-<div class="header">
-
-<div class="text">
-<h1>Mohd Rashid Farooqui</h1>
-
-<p>
-I am an aspiring PhD candidate with a strong interest in research and academic development. 
-My background includes [your degree], and I am particularly interested in [your research area].
-</p>
+<div class="thesis reveal">
+  <div class="wrap">
+    <p>
+      My work sits at the seam between the assets the energy industry already owns and the
+      transition it now has to deliver: the <span class="k">integrity-constrained,
+      techno-economic case for repurposing legacy oil &amp; gas infrastructure</span> for
+      carbon and hydrogen service, across the natural-gas, refining, and steel value chains.
+    </p>
+  </div>
 </div>
 
-<div class="image">
-<img src="https://via.placeholder.com/200" alt="Profile Photo">
+<section id="research">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">Research Interests</div>
+      <h2>A four-layer view of the energy transition</h2>
+      <p class="sec-intro">
+        I work across the full depth of the problem — from the reservoir to the boardroom.
+        Each layer below is an active research direction; together they describe one coherent
+        question: how do we make existing energy assets serve a low-carbon future?
+      </p>
+    </div>
+    <div class="strata reveal">
+      <div class="layer l1">
+        <div class="rail"><span class="depthtag">STRATEGY</span></div>
+        <div class="body">
+          <h3>Capital, policy &amp; regional pathways</h3>
+          <p>Techno-economic assessment of transition investments, benchmarked against stated net-zero commitments and GCC energy strategy.</p>
+          <div class="tags"><span>techno-economics</span><span>decarbonization policy</span><span>GCC energy</span></div>
+        </div>
+      </div>
+      <div class="layer l2">
+        <div class="rail"><span class="depthtag">SYSTEMS</span></div>
+        <div class="body">
+          <h3>Modelling &amp; data methods</h3>
+          <p>Life-cycle assessment, techno-economic modelling, and machine-learning methods applied to energy systems and decarbonization pathways.</p>
+          <div class="tags"><span>LCA (GREET)</span><span>TEA</span><span>machine learning</span><span>hydrogen &amp; DRI–EAF</span></div>
+        </div>
+      </div>
+      <div class="layer l3">
+        <div class="rail"><span class="depthtag">INFRASTRUCTURE</span></div>
+        <div class="body">
+          <h3>Pipeline &amp; terminal integrity and repurposing</h3>
+          <p>Integrity-constrained repurposing of legacy pipelines and terminals for CO₂ and hydrogen — seismic and structural integrity, and blending feasibility.</p>
+          <div class="tags"><span>asset repurposing</span><span>pipeline integrity</span><span>CAESAR II</span><span>H₂ blending</span></div>
+        </div>
+      </div>
+      <div class="layer l4">
+        <div class="rail"><span class="depthtag">SUBSURFACE</span></div>
+        <div class="body">
+          <h3>Reservoir, storage &amp; recovery</h3>
+          <p>Reservoir engineering and simulation, CO₂-EOR, and underground hydrogen and carbon storage in depleted and saline formations.</p>
+          <div class="tags"><span>reservoir simulation</span><span>CO₂-EOR</span><span>subsurface H₂/CO₂ storage</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="banded">
+<section id="experience">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">Experience</div>
+      <h2>Research &amp; industry</h2>
+      <p class="sec-intro">
+        Few PhD applicants have built the infrastructure the field now wants to decarbonize.
+        I have — across 13 years in oil &amp; gas — and I now pair that with graduate research
+        in energy transition and subsurface training at ADNOC.
+      </p>
+    </div>
+    <div class="reveal">
+
+      <div class="entry">
+        <div class="when">Aug 2025 – present</div>
+        <div>
+          <p class="role">Graduate Research</p>
+          <p class="org">IIT Delhi · Abu Dhabi Campus</p>
+          <ul>
+            <li><b>GREET-based LCA &amp; techno-economic study:</b> decarbonizing UAE steelmaking through green-hydrogen and nuclear-powered DRI–EAF.</li>
+            <li><b>ML forecasting of Global Horizontal Irradiance (GHI)</b> for the Abu Dhabi region using NSRDB data (2017–2019).</li>
+            <li><b>Techno-economic evaluation</b> of a 100 MW grid-connected solar PV plant.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">Summer 2026 · 10 wks</div>
+        <div>
+          <p class="role">Specialized Research &amp; Technical Training</p>
+          <p class="org">ADNOC Onshore · Subsurface &amp; Data Management</p>
+          <ul>
+            <li><b>Reservoir characterization &amp; simulation:</b> hands-on geology, geophysics, petrophysics, well logging, and SCAL through an EOR reservoir-simulation project.</li>
+            <li><b>Petroleum Engineering Learning Program:</b> drilling, rigless well operations, artificial lift (ESP design), flow assurance, and well stimulation including hydraulic fracturing.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">Jul 2012 – Aug 2025</div>
+        <div>
+          <p class="role">Applied Industry Research</p>
+          <p class="org">MECON Limited</p>
+          <ul>
+            <li><b>Hydrogen blending in the existing natural-gas grid:</b> structural-integrity and process-parameter analysis on industry data.</li>
+            <li><b>Seismic response of buried cross-country gas pipelines in fault zones:</b> built a CAESAR II model and mathematical framework from survey and design data, delivered in-house and eliminating outsourcing cost.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 </div>
 
+<section id="professional">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">Professional Experience</div>
+      <h2>Senior Manager — MECON Limited</h2>
+      <p class="sec-intro">
+        Govt. of India engineering &amp; project-management consultancy · Jul 2012 – Aug 2025 · Delhi.
+        Across 13 years I designed and engineered the oil &amp; gas infrastructure — cross-country
+        pipelines, terminals, storage, and gas networks.
+      </p>
+    </div>
+    <div class="reveal">
+      <div class="entry">
+        <div class="when">Selected projects</div>
+        <div>
+          <p class="projnote">Design, engineering &amp; project management</p>
+          <ul>
+            <li><b>LPG cross-country pipeline &amp; terminals (~200 km), HPCL</b> — detail engineering and project management.</li>
+            <li><b>Greenfield multiproduct white-oil storage terminal (200,000 kL), HPCL</b> — concept to commissioning.</li>
+            <li><b>Cross-country oil pipeline &amp; terminals (~250 km), Chattogram–Dhaka,</b> Bangladesh Petroleum Corp. — FEED, detail engineering, terminal modernization.</li>
+            <li><b>Hydrogen blending in natural-gas pipeline, Avantika Gas</b> — feasibility, techno-economic, and regulatory gap analysis.</li>
+            <li><b>National natural-gas grid modernization (pan-India), GAIL</b> — network mapping, retrofitting, automation, energy-efficiency optimization.</li>
+            <li><b>Strategic terminal at Leh, Ladakh (~3,500 m AMSL, ~−30 °C), HPCL</b> — white-oil multiproduct storage design.</li>
+            <li><b>Vapor-recovery systems, white-oil terminals (pan-India), HPCL;</b> crude-oil storage, Oil India; iron-ore slurry pipeline feasibility, NMDC; HINCOL (HPCL–COLAS) bitumen plant, Visakhapatnam.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="banded">
+<section id="work">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">Selected Work</div>
+      <h2>Publications</h2>
+    </div>
+    <div class="reveal">
+      <div class="pub">
+        <p class="t">Hydrogen Systems &amp; Infrastructure Integration</p>
+        <p class="m">Rashid Farooqui, A. Agrawal · ASME IMECE-India 2025 · <a href="https://doi.org/10.1115/IMECE-INDIA2025-159422" target="_blank" rel="noopener">doi:10.1115/IMECE-INDIA2025-159422</a></p>
+      </div>
+      <div class="pub">
+        <p class="t">Hydrogen: Powering India’s Path to Net-Zero <span class="status">cover article</span></p>
+        <p class="m">Mohd Rashid Farooqui · Energy Future, The Energy and Resources Institute (TERI) · Vol. 13, Issue 3, 2025</p>
+      </div>
+      <div class="pub">
+        <p class="t">Clean Technologies for Energy Transition</p>
+        <p class="m">Rashid Farooqui · Annual Technical Volume, The Institution of Engineers (India) · 2025</p>
+      </div>
+      <div class="pub">
+        <p class="t">Decarbonization of the Steel Industry: A GREET-Based Life-Cycle Assessment
+          <span class="status">in preparation</span></p>
+        <p class="m">M. R. Farooqui, A. Negi, T. S. Khan, M. A. Haider</p>
+      </div>
+    </div>
+  </div>
+</section>
 </div>
 
-<h2 id="about">About Me</h2>
-<p>
-I am currently preparing for PhD applications and building my research profile through projects and self-study.
-My goal is to contribute to impactful research in my field.
-</p>
+<section id="credentials">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">Background</div>
+      <h2>Education, skills &amp; recognition</h2>
+    </div>
+    <div class="cred reveal">
+      <div class="full">
+        <h3>Education</h3>
+        <ul>
+          <li><b>M.Tech, Energy Transition &amp; Sustainability</b> — IIT Delhi, Abu Dhabi · Aug 2025 – Jun 2027 (expected) · GPA 10.0 / 10 (2 of 4 semesters)</li>
+          <li><b>B.Tech, Mechanical Engineering</b> — NIT Silchar · Jul 2008 – Jun 2012 · GPA 8.71 / 10 · ranked 5 of 110</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Technical skills</h3>
+        <ul>
+          <li><b>Modelling &amp; simulation:</b> Aspen, ANSYS, GREET, CAESAR II, SAM, AutoCAD 3D, Material Studio</li>
+          <li><b>Programming:</b> Python, C / C++, MATLAB</li>
+          <li><b>Methods:</b> LCA, TEA, FEED &amp; detail engineering, system optimization, ML for energy systems</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Certifications</h3>
+        <ul>
+          <li>Energy within Environmental Constraints — HarvardX</li>
+          <li>Energy Economics &amp; Policy — MITx</li>
+          <li>Probability: The Science of Uncertainty &amp; Data — MITx MicroMasters</li>
+          <li>Energy Resources, Economics &amp; Environment — NPTEL</li>
+        </ul>
+      </div>
+      <div class="full">
+        <h3>Awards &amp; honors</h3>
+        <ul>
+          <li>Ranked 5 of 110, B.Tech Mechanical Engineering, NIT Silchar</li>
+          <li>Top 1% of ~1 million candidates, All-India Engineering Entrance Examination (AIEEE)</li>
+          <li>27th rank (~2.5 million candidates), Higher Secondary Board Examination, Uttar Pradesh</li>
+          <li>Silver medal, All-India inter-NIT handball tournament</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-<h2 id="projects">Projects</h2>
-<p><strong>Project 1:</strong> Data analysis using Python with visualization tools.</p>
-<p><strong>Project 2:</strong> Machine learning model for prediction tasks.</p>
-
-<h2 id="research">Research Interests</h2>
-<ul>
-<li>Machine Learning</li>
-<li>Data Science</li>
-<li>Artificial Intelligence</li>
-</ul>
-
-<h2 id="contact">Contact</h2>
-<p>Email: your-email@example.com</p>
-
+<div class="wrap">
+  <div class="contact reveal" id="contact">
+    <div class="sec-label" style="color:#9DB0D0;">Contact</div>
+    <h2>Open to PhD positions &amp; research collaboration</h2>
+    <p>I am applying for fully funded PhD positions in energy-transition research. If my work fits your group, I’d welcome a conversation.</p>
+    <div class="links">
+      <a href="mailto:25a1etsm8011@iitdabudhabi.ac.ae">Email me</a>
+      <a href="https://orcid.org/0009-0009-5107-7212" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://scholar.google.com/citations?user=Mohd+Rashid+Farooqui" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/rfarooqui90" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="cv.pdf">Download CV</a>
+    </div>
+  </div>
 </div>
+
+<footer>
+  <div class="wrap">© <span id="yr"></span> Mohd Rashid Farooqui · Built with plain HTML on GitHub Pages</div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var t=document.querySelector('.menu-toggle'), n=document.querySelector('.navlinks');
+  t.addEventListener('click',function(){var open=n.classList.toggle('open');t.setAttribute('aria-expanded',open);});
+  n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');t.setAttribute('aria-expanded',false);});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
 
 </body>
 </html>
